@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  /* --primary-one: whitesmoke; 
+    --primary-two: white;
+    --contrast-one: black;  */
+  --primary-one: darkslategrey;
+  --primary-two: black;
+  --contrast-one: whitesmoke;
+  --accent-one: cadetblue;
+  --accent-two: lightslategray;
+  --warning: red;
+  --non-warning: lightgreen;
+  --button-width: 5em;
+  --button-color: whitesmoke; 
+
+}
+small {
+    color: var(--accent-two)
+}
+input {
+  width: calc(100% - 3em - var(--button-width));
+  border-color: var(--accent-one);
+  border-width: 0.1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.4em 0.3em var(--primary-one);
+  padding: 0.75em;
+  margin: 0.5em;
+}
+input:focus {
+  border-color: var(--accent-one);
+  box-shadow: 0 0 0.8em 0.4em var(--accent-one);
+  outline: none;
+}
+button {
+  border: none;
+  border-radius: 0.25em;
+  padding: 0.5em;
+  width: var(--button-width);
+  color: var(--button-color); 
+  background-color: var(--accent-two);
+
+}
+.item > p,
+form > input {
+  width: 75%;
+}
+.warning {
+  background-color: var(--warning);
+}
+.non-warning {
+  background-color: var(--non-warning);
+}
+html {
+  font-size: 1.25rem;
+  background-color: var(--primary-two);
+  color: var(--contrast-one);
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: "Ubuntu";
+}
+
+h1,
+h3 {
+  color: var(--accent-one);
+}
+
+h3 {
+  margin: 0;
+  border-bottom: 0.1em solid var(--accent-two);
+}
+p {
+  font-size: 0.75rem;
+  padding: 0.5em;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+  margin: 0;
+}
+
+body > div {
+  width: 100%;
+}
+
+.limiter {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.box {
+  margin: 2em;
+  width: 100%;
+  padding: 1em;
+  border-radius: 1em;
+}
+.shadow {
+  box-shadow: 0 0 0.5em 0.1em var(--accent-two);
+  background-color: var(--primary-two);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  flex-grow: 1;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer > .limiter > p {
+    color: var(--accent-two);
+  font-size: 0.7rem !important;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .flex-row {
+    flex-wrap: wrap;
+  }
+}

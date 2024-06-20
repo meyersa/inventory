@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="flex-column">
+    <div class="shadow">
+      <div class="limiter flex-row">
+        <h1>inventory</h1>
+        <button onclick="location.reload()">refresh</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="flex-row limiter">
+        <div class="box shadow">
+          <h3>Websites</h3>
+          {% if websites|length < 1 %}
+          <p class="item">No websites added</p>
+          {% else %} {% for website in websites %}
+          <div class="item flex-row">
+            <div class="flex-row">
+              <p>{{ website[0] }}</p>
+              <p><small>{{ website[1] }}</small></p>
+            </div>
+            <button class="warning" onclick="deleteItem('website', '{{ website[0] }}')">Remove</button>
+          </div>
+          {% endfor %} {% endif %}
+          <form class="flex-row" onsubmit="addItem('website'); return false;">
+            <input type="text" id="website" placeholder="Add new website" required />
+            <button class="non-warning" type="submit">Add</button>
+          </form>
+        </div>
+        <div class="box shadow">
+          <h3>Hosts</h3>
+          {% if hosts|length < 1 %}
+          <p class="item">No hosts added</p>
+          {% else %} {% for host in hosts %}
+          <div class="item flex-row">
+            <div class="flex-row">
+              <p>{{ host[0] }}</p>
+              <p><small>{{ host[1] }}</small></p>
+            </div>
+            <button class="warning" onclick="deleteItem('host', '{{ host[0] }}')">Remove</button>
+          </div>
+          {% endfor %} {% endif %}
+          <form class="flex-row" onsubmit="addItem('host'); return false;">
+            <input type="text" id="host" placeholder="Add new host" required />
+            <button class="non-warning" type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer shadow">
+      <div class="limiter">
+        <p>Small utility to manage inventory of hosts and websites for other services</p>
+      </div>
+    </div>
+    <script src="/static/entityManager.js"></script>
+  </body>
+</html>
