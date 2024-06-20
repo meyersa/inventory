@@ -128,10 +128,11 @@ def get_entities(type: str=None):
     to_return = list()
     try: 
         for ent in MONGO_DB.get_collection(type).find():
-            to_return.append([str(ent.get("entity")), str(ent.get("timestamp"))])
-    
+            to_return.append([str(ent.get("entity")), datetime.strptime(ent.get("timestamp"), "%Y-%m-%d %H:%M:%S.%f").strftime("%A %B %d, %Y at %I:%M:%S%p")])
+
     except: 
         return jsonify({'success': False, 'message': 'Could not list entities'}), 400
+
 
     return to_return
 
