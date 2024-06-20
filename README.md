@@ -1,3 +1,2 @@
-# Fix timestamp
-# New theme pls lol 
-# there was def something else
+# About 
+Small utility to dynamically manage inventory. Can then be queried by Ansible/Paranoia to get all hosts
