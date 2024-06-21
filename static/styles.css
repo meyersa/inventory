@@ -89,6 +89,12 @@ p {
   padding: 0.5em;
 }
 
+a {
+  margin: 1em auto; 
+  display: block;
+  
+}
+
 small {
   color: var(--accent-two);
 }
@@ -128,7 +134,7 @@ small {
   flex-grow: 1;
 }
 
-.footer > .limiter > p {
+.footer > .limiter > p, a {
   color: var(--accent-two);
   font-size: 0.7rem !important;
   text-align: center;
